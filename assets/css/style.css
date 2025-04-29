@@ -114,6 +114,25 @@
     padding: 0 calc(100vw*(40/1920));
     padding-bottom: calc(100vw*(22/1920));
 }
+.consulting-list .consulting-item.is-warning {
+    animation: warning-blink 1s infinite;
+}
+
+@keyframes warning-blink {
+    0% {
+        background: #FFF;
+        color: #222;
+    }
+    50% {
+        background: rgba(229, 0, 0, 0.05);
+        color: #B70000;
+    }
+    100% {
+        background: #FFF;
+        color: #222;
+    }
+}
+
 .consulting-list .consulting-name {
     font-size: calc(100vw*(48/1920));
 }
