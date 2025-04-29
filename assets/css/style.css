@@ -49,6 +49,9 @@
     width: 100%;
     padding: calc(100vw*(32/1920));
 }
+.status-item.is-disabled {
+    color: #BEBEBE;
+}
 .status-item:not(:first-of-type) {
     border-left: calc(100vw*(5/1920)) solid #E1E1E1;
 }
