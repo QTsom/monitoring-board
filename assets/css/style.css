@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 calc(100vw*(40/1920));
+    padding: 0 calc(100vw*(50/1920));
     height: calc(100vw*(100/1920));
     background: #FFF;
 }
@@ -45,7 +45,6 @@
 .status-item {
     display: flex;
     flex-direction: column;
-    /* gap: calc(100vw*(32/1920)); */
     width: 100%;
     padding: calc(100vw*(32/1920));
 }
