@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
     <title>palette</title>
     <!-- 모니터링 전광판 -->
 </head>
@@ -58,7 +59,7 @@
                     <!-- 1차 경고는 그냥 명단에 올라가고 2차 경고는 깜빡깜빡 표시 -->
                      
                     <!-- 상담 콘텐츠 표시인원 4명일 때 폼 -->
-                    <ul class="consulting-list is-four active">
+                    <ul class="consulting-list is-four">
                         <!-- 2차 경고 시 is-warning 클래스 추가 -->
                         <li class="consulting-item is-warning">
                             <span class="consulting-name">김상담</span>
@@ -143,9 +144,9 @@
                     </ul>
 
                     <!-- 명단 비어있을 때 active -->
-                    <div class="empty-box">
+                    <div class="empty-box active">
                         <div class="gif-box">
-                            <img src="/assets/img/empty_img.svg" alt="이모티콘">
+                            <div class="lottie-container" style="width: 100%;"></div>
                         </div>
                         <h3>잘하고 있어요!</h3>
                     </div>
@@ -161,7 +162,7 @@
                     </div>
                     
                     <!-- 후처리 콘텐츠 표시인원 4명일 때 폼 -->
-                    <ul class="consulting-list is-four active">
+                    <ul class="consulting-list is-four">
                         <li class="consulting-item">
                             <span class="consulting-name">김상담</span>
                             <strong class="consulting-time">15:27</strong>
@@ -245,9 +246,9 @@
                     </ul>
                     
                     <!-- 명단 비어있을 때 active -->
-                    <div class="empty-box">
+                    <div class="empty-box active">
                         <div class="gif-box">
-                            <img src="/assets/img/empty_img.svg" alt="이모티콘">
+                            <div class="lottie-container" style="width: 100%;"></div>
                         </div>
                         <h3>잘하고 있어요!</h3>
                     </div>
@@ -257,4 +258,24 @@
         </div>
     </main>
 </body>
+<script>
+    // DOM이 완전히 로드된 후 애니메이션 실행
+    document.addEventListener('DOMContentLoaded', function() {
+        // 모든 Lottie 컨테이너에 대해 애니메이션 로드
+        document.querySelectorAll('.lottie-container').forEach(container => {
+            const animation = lottie.loadAnimation({
+                container: container,
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: '/assets/img/smile_emoji_(s).json'
+            });
+
+            // 애니메이션 로드 에러 처리
+            animation.addEventListener('data_failed', function() {
+                console.error('Lottie animation failed to load');
+            });
+        });
+    });
+</script>
 </html>
