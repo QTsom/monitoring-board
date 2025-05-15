@@ -135,14 +135,7 @@
     }
 }
 
-.consulting-list .consulting-name {
-    font-size: calc(100vw*(48/1920));
-}
-.consulting-list .consulting-time {
-    font-size: calc(100vw*(56/1920));
-    font-weight: 700;
-}
-
+/* 4명 폼 */
 .consulting-list.is-four {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -150,27 +143,69 @@
 .consulting-list.is-four .consulting-item:not(:last-of-type) {
     border-bottom: 1px solid #BEBEBE;
 }
+.consulting-list.is-four .consulting-name {
+    font-size: calc(100vw*(48/1920));
+}
+.consulting-list.is-four .consulting-time {   
+    font-size: calc(100vw*(56/1920));
+    font-weight: 700;
+}
 
+/* 6명 폼 */
 .consulting-list.is-six {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
-.consulting-list.is-six .consulting-item:nth-child(2n) {
-    border-left: 1px solid #BEBEBE;
+.consulting-list.is-six .consulting-item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    gap: 0;
+    padding-bottom: 0;
 }
-.consulting-list.is-six .consulting-item:nth-child(n+3) {
-    border-top: 1px solid #BEBEBE;
+.consulting-list.is-six .consulting-item:nth-child(2n+1) {
+    border-right: 1px solid #BEBEBE;
+}
+.consulting-list.is-six .consulting-item:not(:nth-child(n+5)) {
+    border-bottom: 1px solid #BEBEBE;
+}
+.consulting-list.is-six .consulting-name {
+    font-size: calc(100vw*(48/1920));
+}
+.consulting-list.is-six .consulting-time {
+    font-size: calc(100vw*(56/1920));
+    font-weight: 700;
 }
 
+/* 8명 폼 */
 .consulting-list.is-eight { 
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
 }
-.consulting-list.is-eight .consulting-item:nth-child(2n) {
-    border-left: 1px solid #BEBEBE;
+.consulting-list.is-eight .consulting-item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 0;
+    padding-bottom: 0;
 }
-.consulting-list.is-eight .consulting-item:nth-child(n+3) {
-    border-top: 1px solid #BEBEBE;
+.consulting-list.is-eight .consulting-item:nth-child(2n+1) {
+    border-right: 1px solid #BEBEBE;
+}
+.consulting-list.is-eight .consulting-item:not(:nth-child(n+7)) {
+    border-bottom: 1px solid #BEBEBE;
+}
+.consulting-list.is-eight .consulting-name {
+    text-align: left;
+    font-size: calc(100vw*(36/1920));
+}
+.consulting-list.is-eight .consulting-time {
+    width: 100%;
+    text-align: right;
+    font-size: calc(100vw*(48/1920));
+    font-weight: 700;
 }
 
 .empty-box {
